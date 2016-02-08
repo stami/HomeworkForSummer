@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0eI-bv-UTI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Buddies-->
+        <scene sceneID="2m8-RL-faH">
+            <objects>
+                <tableViewController id="WsF-lC-MBn" customClass="BuddyTableViewController" customModule="HomeworkForSummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Up-Vt-qlr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuddyCell" rowHeight="60" id="H1V-f8-vNR" customClass="BuddyCell" customModule="HomeworkForSummer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H1V-f8-vNR" id="C05-mf-gZF">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samuli Tamminen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBQ-Bc-e9i">
+                                            <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="wTV-F3-DCC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN FI24 5333 0520 0253 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsb-1K-Etl">
+                                            <rect key="frame" x="8" y="30" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Qsb-1K-Etl" firstAttribute="trailing" secondItem="C05-mf-gZF" secondAttribute="trailingMargin" id="SSw-Br-G9a"/>
+                                        <constraint firstItem="Qsb-1K-Etl" firstAttribute="leading" secondItem="C05-mf-gZF" secondAttribute="leadingMargin" id="TeT-IB-Nt2"/>
+                                        <constraint firstItem="DBQ-Bc-e9i" firstAttribute="leading" secondItem="C05-mf-gZF" secondAttribute="leadingMargin" id="bU6-73-I7E"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Qsb-1K-Etl" secondAttribute="bottom" id="eb1-Ge-QyB"/>
+                                        <constraint firstItem="DBQ-Bc-e9i" firstAttribute="top" secondItem="C05-mf-gZF" secondAttribute="topMargin" id="ffJ-Zg-EQ1"/>
+                                        <constraint firstItem="Qsb-1K-Etl" firstAttribute="top" secondItem="DBQ-Bc-e9i" secondAttribute="bottom" constant="1" id="hdC-DZ-rLi"/>
+                                        <constraint firstItem="DBQ-Bc-e9i" firstAttribute="trailing" secondItem="C05-mf-gZF" secondAttribute="trailingMargin" id="oa4-Wa-fyy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="accountLabel" destination="Qsb-1K-Etl" id="NZp-tR-EAe"/>
+                                    <outlet property="nameLabel" destination="DBQ-Bc-e9i" id="BfB-uG-fal"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WsF-lC-MBn" id="0AQ-am-xBV"/>
+                            <outlet property="delegate" destination="WsF-lC-MBn" id="80R-M4-hXu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Buddies" id="SD5-lw-766"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3a-nx-39f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="432"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kRF-l0-MQ5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0eI-bv-UTI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dZY-26-Wwb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WsF-lC-MBn" kind="relationship" relationship="rootViewController" id="Pcy-xK-9E4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8h-Q0-FYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307" y="432"/>
+        </scene>
+    </scenes>
+</document>
