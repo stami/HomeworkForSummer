@@ -9,7 +9,7 @@
         <!--My Buddies-->
         <scene sceneID="2m8-RL-faH">
             <objects>
-                <tableViewController id="WsF-lC-MBn" customClass="BuddyTableViewController" customModule="HomeworkForSummer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WsF-lC-MBn" customClass="BuddyViewController" customModule="HomeworkForSummer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Up-Vt-qlr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,9 +19,15 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H1V-f8-vNR" id="C05-mf-gZF">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN FI24 5333 0520 0253 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsb-1K-Etl">
+                                            <rect key="frame" x="8" y="30" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samuli Tamminen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBQ-Bc-e9i">
                                             <rect key="frame" x="8" y="8" width="304" height="21"/>
                                             <constraints>
@@ -29,12 +35,6 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN FI24 5333 0520 0253 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsb-1K-Etl">
-                                            <rect key="frame" x="8" y="30" width="304" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -59,12 +59,94 @@
                             <outlet property="delegate" destination="WsF-lC-MBn" id="80R-M4-hXu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Buddies" id="SD5-lw-766"/>
+                    <navigationItem key="navigationItem" title="My Buddies" id="SD5-lw-766">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wEc-ls-ztP">
+                            <connections>
+                                <segue destination="W93-UV-yrf" kind="presentation" id="O7V-9A-K4o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3a-nx-39f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="746" y="432"/>
+        </scene>
+        <!--New Account-->
+        <scene sceneID="jum-7A-apJ">
+            <objects>
+                <viewController id="p4a-01-tDX" customClass="NewBuddyViewController" customModule="HomeworkForSummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ipg-Jw-3hd"/>
+                        <viewControllerLayoutGuide type="bottom" id="hse-8b-8ub"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QGu-ra-hst">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Buddy's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihF-qV-yXh">
+                                <rect key="frame" x="16" y="115.5" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1md-82-xhk">
+                                <rect key="frame" x="16" y="87" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FI42 5000 1510 0000 23" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ygg-Kb-QuC">
+                                <rect key="frame" x="16" y="193" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dir-Wk-5LY">
+                                <rect key="frame" x="16" y="165" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dir-Wk-5LY" firstAttribute="top" secondItem="ihF-qV-yXh" secondAttribute="bottom" constant="20" id="212-6x-uZA"/>
+                            <constraint firstItem="Ygg-Kb-QuC" firstAttribute="top" secondItem="Dir-Wk-5LY" secondAttribute="bottom" constant="8" id="3rq-42-7nk"/>
+                            <constraint firstItem="ihF-qV-yXh" firstAttribute="top" secondItem="1md-82-xhk" secondAttribute="bottom" constant="8" id="7eC-1d-Q89"/>
+                            <constraint firstItem="1md-82-xhk" firstAttribute="trailing" secondItem="QGu-ra-hst" secondAttribute="trailingMargin" id="8WL-TO-eoT"/>
+                            <constraint firstItem="Ygg-Kb-QuC" firstAttribute="leading" secondItem="QGu-ra-hst" secondAttribute="leadingMargin" id="8qp-hu-R2A"/>
+                            <constraint firstItem="Dir-Wk-5LY" firstAttribute="trailing" secondItem="QGu-ra-hst" secondAttribute="trailingMargin" id="ABf-I6-noW"/>
+                            <constraint firstItem="ihF-qV-yXh" firstAttribute="leading" secondItem="QGu-ra-hst" secondAttribute="leadingMargin" id="J1e-qs-jD6"/>
+                            <constraint firstItem="ihF-qV-yXh" firstAttribute="trailing" secondItem="QGu-ra-hst" secondAttribute="trailingMargin" id="K41-rK-CKm"/>
+                            <constraint firstItem="Ygg-Kb-QuC" firstAttribute="top" secondItem="Dir-Wk-5LY" secondAttribute="bottom" constant="8" id="bgp-Au-nqq"/>
+                            <constraint firstItem="Dir-Wk-5LY" firstAttribute="leading" secondItem="QGu-ra-hst" secondAttribute="leadingMargin" id="etw-PU-9hF"/>
+                            <constraint firstItem="ihF-qV-yXh" firstAttribute="top" secondItem="1md-82-xhk" secondAttribute="bottom" constant="8" id="ga1-CO-vWc"/>
+                            <constraint firstItem="1md-82-xhk" firstAttribute="leading" secondItem="QGu-ra-hst" secondAttribute="leadingMargin" id="h2a-y9-mbo"/>
+                            <constraint firstItem="Ygg-Kb-QuC" firstAttribute="trailing" secondItem="QGu-ra-hst" secondAttribute="trailingMargin" id="pLb-eR-bFW"/>
+                            <constraint firstItem="1md-82-xhk" firstAttribute="top" secondItem="ipg-Jw-3hd" secondAttribute="bottom" constant="23" id="pSI-gQ-M7U"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Account" id="8YR-gQ-h4q">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lF5-EN-Ej9">
+                            <connections>
+                                <action selector="cancel:" destination="p4a-01-tDX" id="57c-Bh-ciY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="s35-tz-r4s">
+                            <connections>
+                                <segue destination="l70-Jj-cWn" kind="unwind" unwindAction="unwindToBuddyViewController:" id="NI3-td-baG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="accountTextField" destination="Ygg-Kb-QuC" id="I4j-66-EQv"/>
+                        <outlet property="nameTextField" destination="ihF-qV-yXh" id="xos-kd-IxU"/>
+                        <outlet property="saveButton" destination="s35-tz-r4s" id="yQH-c3-m7w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSp-UC-pyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="l70-Jj-cWn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kRF-l0-MQ5">
@@ -84,6 +166,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8h-Q0-FYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="307" y="432"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bit-TS-avA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W93-UV-yrf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ODY-if-o2F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p4a-01-tDX" kind="relationship" relationship="rootViewController" id="uw6-Dz-9fy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oCN-TW-zjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="432"/>
         </scene>
     </scenes>
 </document>
