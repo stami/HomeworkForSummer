@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewBuddyViewController: UIViewController {
+class DetailBuddyViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var accountTextField: UITextField!
@@ -21,6 +21,13 @@ class NewBuddyViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Set up views if editing an existing Buddy
+        if let buddy = buddy {
+            navigationItem.title = buddy.name
+            nameTextField.text = buddy.name
+            accountTextField.text = buddy.account
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +40,16 @@ class NewBuddyViewController: UIViewController {
     // MARK: - Navigation
 
     @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMode {
+            // Dismiss modal
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            // Go back in navigation controller
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

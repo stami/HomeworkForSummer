@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8815F0911C6D1545008D6F0D /* NewBuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815F0901C6D1545008D6F0D /* NewBuddyViewController.swift */; };
+		8815F0911C6D1545008D6F0D /* DetailBuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815F0901C6D1545008D6F0D /* DetailBuddyViewController.swift */; };
 		88CFE3691C68F8C90031160D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CFE3681C68F8C90031160D /* AppDelegate.swift */; };
 		88CFE36E1C68F8C90031160D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CFE36C1C68F8C90031160D /* Main.storyboard */; };
 		88CFE3701C68F8C90031160D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CFE36F1C68F8C90031160D /* Assets.xcassets */; };
@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8815F0901C6D1545008D6F0D /* NewBuddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBuddyViewController.swift; sourceTree = "<group>"; };
+		8815F0901C6D1545008D6F0D /* DetailBuddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBuddyViewController.swift; sourceTree = "<group>"; };
 		88CFE3651C68F8C90031160D /* HomeworkForSummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkForSummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CFE3681C68F8C90031160D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CFE36D1C68F8C90031160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 				88CFE38E1C69032D0031160D /* BuddyCell.swift */,
 				88CFE36C1C68F8C90031160D /* Main.storyboard */,
 				88CFE38C1C6901C50031160D /* BuddyViewController.swift */,
-				8815F0901C6D1545008D6F0D /* NewBuddyViewController.swift */,
+				8815F0901C6D1545008D6F0D /* DetailBuddyViewController.swift */,
 				88CFE3681C68F8C90031160D /* AppDelegate.swift */,
 				88CFE36F1C68F8C90031160D /* Assets.xcassets */,
 				88CFE3711C68F8C90031160D /* LaunchScreen.storyboard */,
@@ -214,7 +214,7 @@
 				88CFE3891C68FBD30031160D /* Buddy.swift in Sources */,
 				88CFE38B1C68FE870031160D /* BuddyApi.swift in Sources */,
 				88CFE3691C68F8C90031160D /* AppDelegate.swift in Sources */,
-				8815F0911C6D1545008D6F0D /* NewBuddyViewController.swift in Sources */,
+				8815F0911C6D1545008D6F0D /* DetailBuddyViewController.swift in Sources */,
 				88CFE38F1C69032D0031160D /* BuddyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

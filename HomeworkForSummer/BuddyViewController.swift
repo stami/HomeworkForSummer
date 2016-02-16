@@ -89,14 +89,35 @@ class BuddyViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
+        if segue.identifier == "ShowDetail" {
+            let detailViewController = segue.destinationViewController as! DetailBuddyViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedCell = sender as? BuddyCell {
+                let indexPath = tableView.indexPathForCell(selectedCell)!
+                let selectedBuddy = buddies[indexPath.row]
+                detailViewController.buddy = selectedBuddy
+            }
+        }
+        else if segue.identifier == "AddItem" {
+            // Just logging
+            print("Adding new buddy.")
+        }
     }
     
+    
     @IBAction func unwindToBuddyViewController(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? NewBuddyViewController, buddy = sourceViewController.buddy {
-            // Add a new Buddy
-            let newIndexPath = NSIndexPath(forRow: buddies.count, inSection: 0)
-            buddies.append(buddy)
-            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        if let sourceViewController = sender.sourceViewController as? DetailBuddyViewController, buddy = sourceViewController.buddy {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing buddy
+                buddies[selectedIndexPath.row] = buddy
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            } else {
+                // Add a new Buddy
+                let newIndexPath = NSIndexPath(forRow: buddies.count, inSection: 0)
+                buddies.append(buddy)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
         }
     }
     
