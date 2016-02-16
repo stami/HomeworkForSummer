@@ -10,8 +10,7 @@ import UIKit
 
 class BuddyViewController: UITableViewController {
     
-    // Get data from whatever storage we are using
-    var buddies = BuddyApi.getBuddies()
+    var buddies = [Buddy]()
     
     
     override func viewDidLoad() {
@@ -19,6 +18,11 @@ class BuddyViewController: UITableViewController {
         
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem()
+        
+        // Load any saved data
+        if let savedBuddies = loadBuddies() {
+            buddies += savedBuddies
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +69,7 @@ class BuddyViewController: UITableViewController {
             // Delete the row from the data source
             print(indexPath.row)
             buddies.removeAtIndex(indexPath.row)
+            saveBuddies()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
@@ -118,7 +123,23 @@ class BuddyViewController: UITableViewController {
                 buddies.append(buddy)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
+            
+            saveBuddies()
         }
+    }
+    
+    
+    // MARK: NSCoding
+    
+    func saveBuddies() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(buddies, toFile: Buddy.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save!")
+        }
+    }
+    
+    func loadBuddies() -> [Buddy]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Buddy.ArchiveURL.path!) as? [Buddy]
     }
     
 

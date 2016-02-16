@@ -14,7 +14,6 @@
 		88CFE3731C68F8C90031160D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CFE3711C68F8C90031160D /* LaunchScreen.storyboard */; };
 		88CFE37E1C68F8C90031160D /* HomeworkForSummerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CFE37D1C68F8C90031160D /* HomeworkForSummerTests.swift */; };
 		88CFE3891C68FBD30031160D /* Buddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CFE3881C68FBD30031160D /* Buddy.swift */; };
-		88CFE38B1C68FE870031160D /* BuddyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CFE38A1C68FE870031160D /* BuddyApi.swift */; };
 		88CFE38D1C6901C50031160D /* BuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CFE38C1C6901C50031160D /* BuddyViewController.swift */; };
 		88CFE38F1C69032D0031160D /* BuddyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CFE38E1C69032D0031160D /* BuddyCell.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		88CFE37D1C68F8C90031160D /* HomeworkForSummerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkForSummerTests.swift; sourceTree = "<group>"; };
 		88CFE37F1C68F8C90031160D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88CFE3881C68FBD30031160D /* Buddy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buddy.swift; sourceTree = "<group>"; };
-		88CFE38A1C68FE870031160D /* BuddyApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyApi.swift; sourceTree = "<group>"; };
 		88CFE38C1C6901C50031160D /* BuddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyViewController.swift; sourceTree = "<group>"; };
 		88CFE38E1C69032D0031160D /* BuddyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +83,6 @@
 		88CFE3671C68F8C90031160D /* HomeworkForSummer */ = {
 			isa = PBXGroup;
 			children = (
-				88CFE38A1C68FE870031160D /* BuddyApi.swift */,
 				88CFE3881C68FBD30031160D /* Buddy.swift */,
 				88CFE38E1C69032D0031160D /* BuddyCell.swift */,
 				88CFE36C1C68F8C90031160D /* Main.storyboard */,
@@ -212,7 +209,6 @@
 			files = (
 				88CFE38D1C6901C50031160D /* BuddyViewController.swift in Sources */,
 				88CFE3891C68FBD30031160D /* Buddy.swift in Sources */,
-				88CFE38B1C68FE870031160D /* BuddyApi.swift in Sources */,
 				88CFE3691C68F8C90031160D /* AppDelegate.swift in Sources */,
 				8815F0911C6D1545008D6F0D /* DetailBuddyViewController.swift in Sources */,
 				88CFE38F1C69032D0031160D /* BuddyCell.swift in Sources */,
@@ -347,6 +343,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HomeworkForSummer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.samulitamminen.HomeworkForSummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,6 +358,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HomeworkForSummer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.samulitamminen.HomeworkForSummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
