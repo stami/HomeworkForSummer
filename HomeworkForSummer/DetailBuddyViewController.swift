@@ -63,6 +63,11 @@ class DetailBuddyViewController: UIViewController, UITextFieldDelegate {
         saveButton.enabled = !name.isEmpty && !account.isEmpty
     }
     
+    // Dismiss keyboard when clicked out of textfield
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 
     
     // MARK: Navigation
