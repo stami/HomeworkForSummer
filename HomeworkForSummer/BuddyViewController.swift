@@ -32,8 +32,8 @@ class BuddyViewController: UITableViewController, UISearchResultsUpdating {
             buddies += savedBuddies
         }
         
-        // For some reason, searchbar doesn't get fully hidden
-        // tableView.contentOffset = CGPointMake(0, searchController.searchBar.frame.size.height)
+        // Hide the searchbar at first
+        tableView.contentOffset = CGPointMake(0, searchController.searchBar.frame.size.height)
 
     }
 
@@ -79,13 +79,12 @@ class BuddyViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     
+    // protocol: UISearchResultsUpdating
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filteredBuddies = buddies.filter { buddy in
             return buddy.name.lowercaseString.containsString(searchController.searchBar.text!.lowercaseString)
         }
-        
         tableView.reloadData()
-
     }
     
 
@@ -109,17 +108,6 @@ class BuddyViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     
-    
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        let movedObject = buddies.removeAtIndex(fromIndexPath.row)
-        buddies.insert(movedObject, atIndex: toIndexPath.row)
-        // print("\(fromIndexPath.row) => \(toIndexPath.row) \(buddies)")
-        // self.tableView.reloadData()
-    }
-
-
-
     
     // MARK: - Navigation
 
