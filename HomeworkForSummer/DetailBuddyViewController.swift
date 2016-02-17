@@ -16,7 +16,8 @@ class DetailBuddyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var accountTextField: UITextField!
     
     var buddy: Buddy?
-
+    var index: Int?
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -118,11 +119,6 @@ class DetailBuddyViewController: UIViewController, UITextFieldDelegate {
             presentViewController(alert, animated: true, completion: nil)
             
         }
-        
-        buddy = Buddy(name: name, account: account)
-        
-
-        
         
     }
     
