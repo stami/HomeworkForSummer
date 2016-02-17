@@ -76,7 +76,7 @@ struct IBAN {
     
     
     // Remove all illegal characters
-    static private func stripIllegal(str: String) -> String {
+    static func stripIllegal(str: String) -> String {
         
         // mutable copy
         var str = str

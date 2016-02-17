@@ -35,6 +35,19 @@ class HomeworkForSummerTests: XCTestCase {
         // Invalid Country Code
         XCTAssertEqual(IBAN.status("12 34 5678901234567890"), IBANstatus.CountryCodeError)
         XCTAssertEqual(IBAN.status("A0 34 5678901234567890"), IBANstatus.CountryCodeError)
+        
+    }
+    
+    func testIBANinternals() {
+        
+        XCTAssertEqual(IBAN.stripIllegal("!#€%&/( A )=?´¨'"), "A")
+        
+        XCTAssertEqual(IBAN.charsToNumbers("ABCDEZ"), "101112131435")
+        
+        XCTAssertEqual(IBAN.modulo97("97"), 0)
+        XCTAssertEqual(IBAN.modulo97("98"), 1)
+        XCTAssertEqual(IBAN.modulo97("0"), 0)
+        XCTAssertEqual(IBAN.modulo97("97000000000000000000000000000000000000000000001"), 1)
 
     }
     
