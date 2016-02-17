@@ -8,15 +8,34 @@
 
 import Foundation
 
+enum IBANstatus {
+    case Valid
+    case LengthError
+    case CountryCodeError
+    case ChecksumError
+    
+    func description() -> String {
+        switch self {
+        case .Valid:
+            return "Valid IBAN account."
+        case .LengthError:
+            return "IBAN is way too short."
+        case .CountryCodeError:
+            return "Country Code contains illegal characters. Only A-Z allowed."
+        case .ChecksumError:
+            return "Checksum don't match. Check for typos."
+        }
+    }
+}
 
 
 struct IBAN {
     
-    static func isValid(myIban: String) -> Bool {
+    static func status(myIban: String) -> IBANstatus {
         
         if myIban.characters.count < 5 {
-            log("IBAN is way too short!")
-            return false
+            // log("IBAN is way too short!")
+            return .LengthError
         }
         
         // Remove all but A-Z and 0-9
@@ -26,8 +45,8 @@ struct IBAN {
         let countryCode = substring(stripped, start: 0, end: 2)
         
         if countryCode.rangeOfString("[^A-Z]", options: .RegularExpressionSearch) != nil {
-            log("countryCode contains illegal chars! Only A-Z allowed")
-            return false
+            // log("countryCode contains illegal chars! Only A-Z allowed")
+            return .CountryCodeError
         }
         
         // Following two are the check digits
@@ -47,10 +66,10 @@ struct IBAN {
         
         // mod97 returns 1 if IBAN is valid
         if modulo == 1 {
-            return true
+            return .Valid
         } else {
-            log("Checksum mismatch")
-            return false
+            // log("Checksum mismatch")
+            return .ChecksumError
         }
     }
     
@@ -154,27 +173,3 @@ struct IBAN {
     }
     
 }
-
-
-
-
-// Test cases
-//IBAN.isValid("")     // too short
-//IBAN.isValid("3423") // too short
-//IBAN.isValid("234234234234234234") // illegal country code
-//IBAN.isValid("fi42 3242 3242 2332 32") // not valid checksum
-//IBAN.isValid("FI42 5000 1510 0000 23") // OK
-//IBAN.isValid("FI42 5000 xxxx 0000 23") // illegal chars
-//
-//IBAN.isValid("GR16 0110 1250 0000 0001 2300 695") // Valid in Greece
-//IBAN.isValid("GB29 NWBK 6016 1331 9268 19") // Valid in UK (non-numeric bban)
-
-
-
-
-
-
-
-
-
-

@@ -86,12 +86,14 @@ class DetailBuddyViewController: UIViewController, UITextFieldDelegate {
         let name = nameTextField.text ?? ""
         let account = accountTextField.text ?? ""
         
-        if IBAN.isValid(account) {
-            print("DetailBuddyViewController: Valid IBAN")
+        let status = IBAN.status(account)
+        
+        if status == .Valid {
+            print("DetailBuddyViewController: \(status.description())")
             performSegueWithIdentifier("unwindToBuddyViewController", sender: saveButton)
         } else {
             
-            print("DetailBuddyViewController: Invalid IBAN")
+            print("DetailBuddyViewController: \(status.description())")
             
             func cancelHandler(action: UIAlertAction) {
                 print("alert canceled")
@@ -102,13 +104,13 @@ class DetailBuddyViewController: UIViewController, UITextFieldDelegate {
                 performSegueWithIdentifier("unwindToBuddyViewController", sender: saveButton)
             }
             
-            let alert = UIAlertController(title: "Your Account seems to be invalid IBAN", message: "Hint: blablabla", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Invalid IBAN account", message: status.description(), preferredStyle: .Alert)
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelHandler))
             alert.addAction(UIAlertAction(title: "Save anyway", style: .Default, handler: saveHandler))
             
             // Show the alert
-            presentViewController(alert, animated: true, completion: { print("lol") })
+            presentViewController(alert, animated: true, completion: nil)
             
         }
         
