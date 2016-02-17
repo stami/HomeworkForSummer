@@ -134,7 +134,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="s35-tz-r4s">
                             <connections>
-                                <segue destination="l70-Jj-cWn" kind="unwind" unwindAction="unwindToBuddyViewController:" id="NI3-td-baG"/>
+                                <action selector="save:" destination="p4a-01-tDX" id="gjI-gA-S1b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -142,6 +142,7 @@
                         <outlet property="accountTextField" destination="Ygg-Kb-QuC" id="I4j-66-EQv"/>
                         <outlet property="nameTextField" destination="ihF-qV-yXh" id="xos-kd-IxU"/>
                         <outlet property="saveButton" destination="s35-tz-r4s" id="yQH-c3-m7w"/>
+                        <segue destination="l70-Jj-cWn" kind="unwind" identifier="unwindToBuddyViewController" unwindAction="unwindToBuddyViewController:" id="uTR-3d-EyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSp-UC-pyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -188,6 +189,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gHv-lr-GQc"/>
+        <segue reference="uw6-Dz-9fy"/>
     </inferredMetricsTieBreakers>
 </document>
